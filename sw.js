@@ -1,4 +1,4 @@
-/* Service Worker do Diário de Liberdade
+/* Service Worker do Aurora
    Faz o app funcionar 100% offline depois da primeira visita.
    Cacheia o HTML, o CSS, todos os módulos JS e as fontes.
    Ao mudar arquivos, suba o número da versão (v25 → v26) para forçar atualização. */
@@ -20,6 +20,7 @@ const APP_FILES = [
   './js/features.js',
   './js/app.js',
   './manifest.json',
+  './logo.png',
 ];
 
 const FONTS = [
