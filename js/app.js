@@ -143,111 +143,22 @@ function exportarDesabafo(){
 
 /* ===== SERVICE WORKER INLINE (arquivo único) ===== */
 (function(){
-  // Service Worker não funciona em file:// — só registra em https:// ou localhost
+  // Registra o service worker a partir do arquivo real sw.js.
+  // Funciona em https:// (Vercel) e localhost; ignorado em file://.
   if(!('serviceWorker' in navigator)) return;
   if(location.protocol === 'file:') {
-    console.log('[SW] Ignorado em file:// — abra via servidor ou instale como PWA');
+    console.log('[SW] Ignorado em file:// — abra via servidor ou instale como app');
     return;
   }
-  const swCode=`
-const CACHE='diario-liberdade-v24';
-const FONTS=['https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap'];
-
-self.addEventListener('install',e=>{
-  self.skipWaiting();
-  e.waitUntil(
-    caches.open(CACHE).then(c=>{
-      // Cacheia o próprio app + fontes
-      const reqs=[self.location.href,...FONTS];
-      return Promise.allSettled(reqs.map(r=>c.add(r).catch(()=>{})));
-    })
-  );
-});
-
-self.addEventListener('activate',e=>{
-  e.waitUntil(
-    caches.keys().then(keys=>
-      Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))
-    ).then(()=>self.clients.claim())
-  );
-});
-
-self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET') return;
-  const url=new URL(e.request.url);
-  // Cache-first para o próprio HTML e fontes
-  const isSelf = url.href===self.location.href||url.origin===self.location.origin;
-  const isFonts = url.hostname.includes('fonts.g') || url.hostname.includes('fonts.googleapis');
-  if(isSelf||isFonts){
-    e.respondWith(
-      caches.match(e.request).then(cached=>{
-        if(cached) return cached;
-        return fetch(e.request).then(res=>{
-          if(res&&res.status===200){
-            const clone=res.clone();
-            caches.open(CACHE).then(c=>c.put(e.request,clone));
-          }
-          return res;
-        }).catch(()=>cached);
-      })
-    );
-  } else {
-    // Network-first para APIs externas (QR, mapas)
-    e.respondWith(
-      fetch(e.request).then(res=>{
-        if(res&&res.status===200){
-          const clone=res.clone();
-          caches.open(CACHE).then(c=>c.put(e.request,clone));
-        }
-        return res;
-      }).catch(()=>caches.match(e.request))
-    );
-  }
-});`;
-  const blob=new Blob([swCode],{type:'application/javascript'});
-  const url=URL.createObjectURL(blob);
-  navigator.serviceWorker.register(url,{scope:'./'})
-    .then(()=>console.log('[SW v24] App 100% offline ✓'))
+  navigator.serviceWorker.register('./sw.js', {scope:'./'})
+    .then(()=>console.log('[SW] App offline pronto ✓'))
     .catch(err=>console.warn('[SW] Não registrado:',err));
 })();
 
 function injectManifest(){
-  // Ícone SVG rico com identidade visual do projeto
-  const iconSvg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-    <rect width="512" height="512" rx="96" fill="#2a0f3a"/>
-    <rect x="40" y="40" width="432" height="432" rx="72" fill="#3c1950"/>
-    <!-- Livro aberto -->
-    <path d="M256 140 C200 140 152 155 130 175 L130 370 C152 352 200 340 256 340 C312 340 360 352 382 370 L382 175 C360 155 312 140 256 140Z" fill="none" stroke="#c8902a" stroke-width="12" stroke-linejoin="round"/>
-    <line x1="256" y1="140" x2="256" y2="340" stroke="#c8902a" stroke-width="10"/>
-    <!-- Estrelas ornamentais -->
-    <text x="256" y="420" font-size="48" text-anchor="middle" fill="#c8902a" opacity="0.8">✦</text>
-    <!-- Rosa sutil -->
-    <circle cx="200" cy="230" r="18" fill="none" stroke="#cb57f2" stroke-width="4" opacity="0.6"/>
-    <circle cx="312" cy="230" r="18" fill="none" stroke="#cb57f2" stroke-width="4" opacity="0.6"/>
-  </svg>`;
-  const iconUrl='data:image/svg+xml,'+encodeURIComponent(iconSvg);
-  const manifest={
-    name:'Meu Diário',
-    short_name:'Diário',
-    description:'Meu espaço pessoal de bem-estar e reflexões',
-    start_url:'./',
-    display:'standalone',
-    orientation:'portrait',
-    background_color:'#2a0f3a',
-    theme_color:'#cb57f2',
-    categories:['health','lifestyle'],
-    icons:[
-      {src:iconUrl,sizes:'192x192',type:'image/svg+xml',purpose:'any'},
-      {src:iconUrl,sizes:'512x512',type:'image/svg+xml',purpose:'any maskable'}
-    ],
-    screenshots:[],
-    shortcuts:[
-      {name:'Registro de hoje',short_name:'Hoje',description:'Abrir percepção do dia',url:'./'}
-    ]
-  };
-  const blob=new Blob([JSON.stringify(manifest)],{type:'application/json'});
-  const url=URL.createObjectURL(blob);
-  document.getElementById('manifest-link').href=url;
+  /* O manifest agora é um arquivo real (manifest.json), linkado direto no
+     index.html. Não precisa mais gerar em memória — esta função fica como
+     no-op para não quebrar a chamada existente. */
 }
 
 
