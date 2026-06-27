@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#c8902a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Diário de Liberdade">
-<title>Diário de Liberdade · Rompendo o Silêncio</title>
+<meta name="apple-mobile-web-app-title" content="Aurora">
+<title>Aurora · seu espaço seguro</title>
 <link rel="manifest" href="manifest.json" id="manifest-link">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
@@ -16,7 +16,7 @@
 
 <!-- SPLASH SCREEN -->
 <div id="app-splash">
-  <div class="splash-logo">💜 <span>Diário de Liberdade</span></div>
+  <div class="splash-logo"><img src="logo.png" alt="Aurora" class="splash-logo-img" onerror="this.style.display='none'"><span>Aurora</span></div>
   <div class="splash-sub">seu espaço seguro</div>
   <div class="splash-spinner"></div>
 </div>
@@ -25,9 +25,9 @@
 <div id="inst-overlay" class="hidden">
   <div class="inst-header">
     <div class="inst-ornament">✦ ✦ ✦</div>
-    <div class="inst-logo-icon">📖</div>
-    <h1 class="inst-title">Diário de<br><em>Liberdade</em></h1>
-    <p class="inst-project">Projeto Rompendo o Silêncio</p>
+    <div class="inst-logo-icon"><img src="logo.png" alt="Aurora" class="inst-logo-img" onerror="this.style.display='none'"></div>
+    <h1 class="inst-title"><em>Aurora</em></h1>
+    <p class="inst-project">seu espaço seguro</p>
     <p class="inst-tagline">Uma ferramenta digital de autodescoberta, acolhimento emocional e proteção jurídica para mulheres em situação de violência doméstica.</p>
   </div>
 
@@ -59,7 +59,7 @@
       <span class="inst-card-icon">🌱</span>
       <div class="inst-card-body">
         <div class="inst-card-title">Como usar em parceria</div>
-        <div class="inst-card-text">O Diário de Liberdade pode ser distribuído por ONGs, casas de acolhimento, delegacias e serviços de saúde. É um arquivo HTML único — funciona sem instalação, em qualquer celular.</div>
+        <div class="inst-card-text">O Aurora pode ser distribuído por ONGs, casas de acolhimento, delegacias e serviços de saúde. É um arquivo HTML único — funciona sem instalação, em qualquer celular.</div>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@
       <span style="color:rgba(203,87,242,.3);">·</span>
       <button class="inst-link" id="sigilo-toggle-btn" onclick="toggleSigiloFromInst()">🔒 Ativar modo sigilo</button>
     </div>
-    <div class="inst-version" id="inst-version">v20 · Projeto Rompendo o Silêncio · 2025</div>
+    <div class="inst-version" id="inst-version">v25 · 2026</div>
   </div>
 </div>
 
@@ -287,7 +287,7 @@
 </div>
 
 <div class="topbar">
-  <span class="topbar-logo">💜 Diário de Liberdade</span>
+  <span class="topbar-logo">Aurora</span>
   <div class="topbar-actions">
     <div class="save-ind" id="save-ind"><div class="save-dot"></div>Salvo</div>
     <button class="icon-btn" id="topbar-apoio-btn" onclick="goSecondarySection('apoio',this)" title="Rede de Apoio" aria-label="Rede de Apoio">🤝</button>
@@ -302,7 +302,7 @@
 <div class="container">
   <div class="header">
     <div class="ornament">✦ ✦ ✦</div>
-    <h1 class="main-title">Diário de<br><em>Liberdade</em></h1>
+    <h1 class="main-title"><em>Aurora</em></h1>
     <p class="subtitle">Coragem · Verdade · Liberdade</p>
     <div class="divider"></div>
     <div class="date-bar">
@@ -426,7 +426,7 @@
         <div class="percepcao-item" onclick="toggleCheck(this,'p4')"><div class="check-circle">✓</div><p class="percepcao-text">Colocar as necessidades de todos antes das minhas — sempre.</p></div>
         <div class="percepcao-item" onclick="toggleCheck(this,'p5')"><div class="check-circle">✓</div><p class="percepcao-text">Fingir que está tudo bem para manter a "paz" em casa.</p></div>
       </div>
-      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>Cada item marcado é um sinal, não uma fraqueza. Você já deu o primeiro passo ao reconhecer.</div></div>
+      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>Cada item marcado é um sinal, não uma fraqueza. Você já deu o primeiro passo ao reconhecer.</div></div>
     </div>
 
     <div class="card perigo">
@@ -521,7 +521,7 @@
 
     <div class="dica-box">
       <span class="dica-icon">💛</span>
-      <div class="dica-text"><strong>Dica da Suelen</strong>Abuso não precisa deixar marca no corpo para ser real. Se você se reconhece nesses padrões, sua dor é válida e você merece ajuda.</div>
+      <div class="dica-text"><strong>Dica</strong>Abuso não precisa deixar marca no corpo para ser real. Se você se reconhece nesses padrões, sua dor é válida e você merece ajuda.</div>
     </div>
 
     <div class="next-phase-wrap">
@@ -550,7 +550,7 @@
         <div class="mood-btn" onclick="toggleMood(this,'m7')"><span class="mood-emoji">🏋️‍♀️</span><span class="mood-label">Força</span></div>
         <div class="mood-btn" onclick="toggleMood(this,'m8')"><span class="mood-emoji">🧘‍♀️</span><span class="mood-label">Paz</span></div>
       </div>
-      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>Nomear o que você sente tira um pouco do poder que a emoção tem sobre você.</div></div>
+      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>Nomear o que você sente tira um pouco do poder que a emoção tem sobre você.</div></div>
     </div>
 
     <!-- CORPO — SVG REDESENHADO -->
@@ -610,7 +610,7 @@
           </div>
         </div>
       </div>
-      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>O corpo lembra o que às vezes tentamos esquecer. Tudo bem ouvir o que ele tem a dizer.</div></div>
+      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>O corpo lembra o que às vezes tentamos esquecer. Tudo bem ouvir o que ele tem a dizer.</div></div>
     </div>
 
     <div class="card">
@@ -626,7 +626,7 @@
         <div class="gatilho-btn" onclick="toggleGatilho(this,'g7')">Quando estou sozinha</div>
         <div class="gatilho-btn" onclick="toggleGatilho(this,'g8')">Antes de dormir</div>
       </div>
-      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>Conhecer os gatilhos é poder. Você passa a se preparar em vez de só reagir.</div></div>
+      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>Conhecer os gatilhos é poder. Você passa a se preparar em vez de só reagir.</div></div>
     </div>
 
     <div class="card golden">
@@ -650,7 +650,7 @@
         <button class="escala-btn" onclick="selectEscala(this,10)">10</button>
       </div>
       <div class="escala-feedback" id="escala-feedback"></div>
-      <div class="dica-box" style="margin-top:.75rem;"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>Se estiver acima de 7 por vários dias seguidos, busque apoio. Você não precisa enfrentar sozinha.</div></div>
+      <div class="dica-box" style="margin-top:.75rem;"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>Se estiver acima de 7 por vários dias seguidos, busque apoio. Você não precisa enfrentar sozinha.</div></div>
     </div>
 
     <div class="next-phase-wrap">
@@ -687,7 +687,7 @@
         <div class="question"><span class="q-num">4</span>"Se esse medo não existisse, o que eu faria amanhã?"</div>
         <textarea class="writing-lines" rows="4" data-key="r4" placeholder="Imagine que o medo some. O que muda?"></textarea>
       </div>
-      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>O medo é real, mas ele não precisa ser o seu chefe.</div></div>
+      <div class="dica-box"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>O medo é real, mas ele não precisa ser o seu chefe.</div></div>
     </div>
     <div class="card">
       <div class="question-block">
@@ -769,10 +769,9 @@
       </div>
     </div>
 
-    <!-- Frase da Suelen (rotativa) -->
+    <!-- Frase de afirmação (rotativa) -->
     <div class="vic-quote-box" id="vic-quote-box">
       <div class="vic-quote-text" id="vic-quote-text"></div>
-      <div class="vic-quote-author">— Suelen</div>
     </div>
 
     <!-- Categorias rápidas -->
@@ -882,7 +881,7 @@
         <div class="psico-card"><div class="psico-nome">Mapa do Acolhimento</div><div class="psico-esp">Rede de psicólogas e advogadas voluntárias</div><div class="psico-contato"><a href="https://mapadoacolhimento.org" target="_blank" style="color:#a07ad0;">mapadoacolhimento.org</a></div></div>
         <div class="psico-card"><div class="psico-nome">Projeto Equilíbrio</div><div class="psico-esp">Atendimento psicológico gratuito online</div><div class="psico-contato"><a href="https://www.projetoequilibrio.com.br" target="_blank" style="color:#a07ad0;">projetoequilibrio.com.br</a></div></div>
       </div>
-      <div class="dica-box" style="margin-top:1rem;"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>Você não precisa pagar para ter apoio psicológico. Esses serviços existem para você.</div></div>
+      <div class="dica-box" style="margin-top:1rem;"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>Você não precisa pagar para ter apoio psicológico. Esses serviços existem para você.</div></div>
     </div>
     <div class="card perigo">
       <p class="section-label" style="color:#e08060;">O que essa pessoa tem acesso</p>
@@ -898,7 +897,7 @@
         <div class="perigo-item" onclick="togglePerigo(this,'per8')"><div class="perigo-check">✓</div><span class="perigo-text">Sabe onde você trabalha / seus horários</span></div>
       </div>
       <textarea class="writing-lines" rows="3" data-key="perigo_obs" style="margin-top:1rem;" placeholder="Outros itens que você quer anotar..."></textarea>
-      <div class="dica-box"><span class="dica-icon">⚠️</span><div class="dica-text"><strong>Dica da Suelen</strong>Cada item marcado é um ponto de atenção para proteger antes de dar passos maiores.</div></div>
+      <div class="dica-box"><span class="dica-icon">⚠️</span><div class="dica-text"><strong>Dica</strong>Cada item marcado é um ponto de atenção para proteger antes de dar passos maiores.</div></div>
     </div>
     <div class="journey-btn-wrap" style="margin-top:1.5rem;">
       <button class="journey-btn" onclick="switchPhase(3)">← Voltar ao diário</button>
@@ -972,7 +971,7 @@
         <div class="ck-block-title"><span>📱</span> Evidências e registros</div>
         <div class="ck-item" onclick="ckToggle(this,'ck19')"><div class="ck-check">✓</div><div class="ck-text">Salvar prints de mensagens ameaçadoras com data e hora<span class="ck-sub">Enviar para e-mail ou nuvem pessoal</span></div></div>
         <div class="ck-item" onclick="ckToggle(this,'ck20')"><div class="ck-check">✓</div><div class="ck-text">Fotografar lesões imediatamente após as agressões<span class="ck-sub">Antes que desapareçam — são prova jurídica</span></div></div>
-        <div class="ck-item" onclick="ckToggle(this,'ck21')"><div class="ck-check">✓</div><div class="ck-text">Registrar datas, horários e descrição dos episódios<span class="ck-sub">Use o Diário de Liberdade com segurança</span></div></div>
+        <div class="ck-item" onclick="ckToggle(this,'ck21')"><div class="ck-check">✓</div><div class="ck-text">Registrar datas, horários e descrição dos episódios<span class="ck-sub">Use o Aurora com segurança</span></div></div>
         <div class="ck-item" onclick="ckToggle(this,'ck22')"><div class="ck-check">✓</div><div class="ck-text">Não apagar mensagens ou e-mails do agressor<span class="ck-sub">Mesmo que doa reler — são evidências</span></div></div>
 
         <div class="ck-block-title"><span>🚨</span> Sinais de que o risco aumentou</div>
@@ -1054,7 +1053,7 @@
       <p class="compromisso-title">Eu me comprometo</p>
       <p class="compromisso-sub">Uma promessa para a mulher que você está se tornando</p>
       <p class="compromisso-text">Eu, <input class="nome-inline" id="nome-input" type="text" data-key="nome" placeholder="seu nome"/>, reconheço que mereço viver sem violência, sem medo e sem humilhação. Comprometo-me a ouvir minha própria voz antes da voz do medo. A pedir ajuda quando precisar. A não me culpar pelo que não é minha culpa. A me respeitar — mesmo quando sinto que não consigo.</p>
-      <div class="dica-box" style="text-align:left;margin-bottom:1.3rem;"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica da Suelen</strong>Você não precisa estar pronta para começar. Você só precisa começar para estar pronta.</div></div>
+      <div class="dica-box" style="text-align:left;margin-bottom:1.3rem;"><span class="dica-icon">💛</span><div class="dica-text"><strong>Dica</strong>Você não precisa estar pronta para começar. Você só precisa começar para estar pronta.</div></div>
       <div class="assinatura-area">
         <p class="assinatura-label">Assinatura</p>
         <input class="assinatura-input" type="text" data-key="assinatura" placeholder="Assine com o coração" onblur="if(this.value.trim()){document.getElementById('contrato-seal').classList.add('show');}"/>
@@ -1140,7 +1139,7 @@
 
       <div class="dica-box" style="margin-top:1rem;">
         <span class="dica-icon">💛</span>
-        <div class="dica-text"><strong>Dica da Suelen</strong>Você não precisa ter sido agredida fisicamente para ter direito à proteção. Violência psicológica, controle e ameaças já são crimes.</div>
+        <div class="dica-text"><strong>Dica</strong>Você não precisa ter sido agredida fisicamente para ter direito à proteção. Violência psicológica, controle e ameaças já são crimes.</div>
       </div>
     </div>
     <button class="next-phase-btn" onclick="showPage('juridica',document.querySelector('[aria-controls=page-juridica]'))">Continuar → Jurídico</button>
@@ -1347,7 +1346,7 @@
         <div class="juridica-step"><div class="step-num">PASSO 2</div><div class="step-title">Medida Protetiva</div><div class="step-desc">Peça ao delegado. O juiz tem até 48h para decidir. Inclui afastamento, proibição de contato e outras medidas.</div><textarea class="step-textarea" rows="2" data-key="j4" placeholder="O que você precisa que essa pessoa seja proibida de fazer?"></textarea></div>
         <div class="juridica-step"><div class="step-num">PASSO 3</div><div class="step-title">Meu depoimento (praticando)</div><div class="step-desc">Escrever antes evita travar na hora. Conte desde o começo, com datas e detalhes.</div><textarea class="step-textarea" rows="6" data-key="j5" placeholder="Conte a sua história aqui. Do início. Com suas palavras. Quanto mais específico, mais forte é o relato."></textarea></div>
       </div>
-      <div class="dica-box" style="margin-top:.5rem;"><span class="dica-icon">⚖️</span><div class="dica-text"><strong>Dica da Suelen</strong>Você não precisa provar que merece proteção. A lei está do seu lado — violência psicológica, controle e ameaças já são crimes.</div></div>
+      <div class="dica-box" style="margin-top:.5rem;"><span class="dica-icon">⚖️</span><div class="dica-text"><strong>Dica</strong>Você não precisa provar que merece proteção. A lei está do seu lado — violência psicológica, controle e ameaças já são crimes.</div></div>
     </div>
 
     <!-- GERAR RELATÓRIO JURÍDICO -->
@@ -1441,19 +1440,16 @@
 
   <div class="nota-footer">
     <div class="nota-footer-project">
-      Diário de Liberdade · Projeto Rompendo o Silêncio
+      Aurora
     </div>
     <div class="nota-footer-credits">
-      <span>Concepção e conteúdo</span>
-      <strong style="color:var(--ts);">Suelen Alves</strong>
-      <span class="nota-footer-sep">·</span>
       <span>Desenvolvimento</span>
       <strong style="color:var(--gold-l);">DToledo</strong>
       <span class="nota-footer-sep">·</span>
       <span style="font-size:.75rem;opacity:.7;">DtLabs</span>
     </div>
     <div class="nota-footer-copy">
-      &copy; <span id="footer-year"></span> DtLabs &nbsp;·&nbsp; Projeto Rompendo o Silêncio &nbsp;·&nbsp; Todos os direitos reservados
+      &copy; <span id="footer-year"></span> Aurora &nbsp;·&nbsp; Todos os direitos reservados
     </div>
     <div style="font-size:.70rem;color:var(--tm);opacity:.4;margin-top:.4rem;letter-spacing:.06em;">
       Seus registros ficam apenas neste dispositivo
