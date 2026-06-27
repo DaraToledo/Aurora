@@ -466,10 +466,5 @@ function pinShake() {
   setTimeout(()=>{ grid.style.animation=''; }, 450);
 }
 
-// ─── INIT DAS NOVAS FEATURES (após todas as declarações) ───
-setTimeout(function(){
-  mostrarAfirmacao();
-  loadTimeline();
-  atualizarVisibilidadeBtnAjuda();
-}, 100);
-
+/* INIT das novas features movido para app.js (carrega por último,
+   quando mostrarAfirmacao/loadTimeline/atualizarVisibilidadeBtnAjuda já existem) */
