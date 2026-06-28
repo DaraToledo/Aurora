@@ -409,6 +409,16 @@ body.ml-active .header  { display:none; }
 .tabs-wrap{margin-bottom:1.5rem;}
 
 .phase-bar{display:flex;gap:.4rem;padding:.6rem 0 1rem;align-items:flex-start;}
+
+/* ===== AURORA — barra de 3 salas (navegacao organica) ===== */
+.room-bar{display:flex;gap:5px;background:rgba(26,11,16,.6);border:1px solid rgba(208,160,80,.18);border-radius:100px;padding:6px;margin:.7rem 0 1.1rem;}
+.room-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:transparent;border:none;border-radius:100px;padding:9px 6px;cursor:pointer;color:var(--tm);font-family:'Nunito',sans-serif;transition:all .25s ease;}
+.room-tab-ico{font-size:1.1rem;line-height:1;}
+.room-tab-label{font-size:.74rem;font-weight:700;letter-spacing:.01em;}
+.room-tab.active{background:var(--gold);color:#241016;box-shadow:0 3px 12px rgba(208,160,80,.3);}
+.room-tab.active .room-tab-label{color:#241016;}
+.room-tab:not(.active):active{transform:scale(.96);}
+@media(max-width:380px){.room-tab-label{font-size:.68rem;}.room-tab-ico{font-size:1rem;}}
 .phase-tab{
   flex:1;display:flex;flex-direction:column;align-items:center;gap:.35rem;
   background:transparent;border:none;cursor:pointer;padding:.3rem .2rem;
