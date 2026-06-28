@@ -3,7 +3,7 @@
    Cacheia o HTML, o CSS, todos os módulos JS e as fontes.
    Ao mudar arquivos, suba o número da versão (v25 → v26) para forçar atualização. */
 
-const CACHE = 'diario-liberdade-v25';
+const CACHE = 'aurora-v2';
 
 const APP_FILES = [
   './',
