@@ -1,6 +1,6 @@
 /* ============================================================
    core.js — Variáveis globais, chaves de armazenamento e hash de PIN. Carregado PRIMEIRO — todos os outros dependem daqui.
-   Diário de Liberdade · gerado a partir do HTML único
+   Aurora · seu espaço seguro
    ============================================================ */
 
 const STORE_KEY='diario_liberdade_v2';
@@ -61,11 +61,10 @@ const PERM_KEYS = new Set([
   'tv1','tv2','tv3','tv4','tv5','tv6','tv7','tv8',
   'jc_risco',
   // preferências do app
-  'theme','currentPhase',
+  'theme','currentPhase','currentRoom',
   // checklist de segurança
   'ck1','ck2','ck3','ck4','ck5','ck6','ck7','ck8','ck9','ck10',
   'ck11','ck12','ck13','ck14','ck15','ck16','ck17','ck18','ck19','ck20',
   'ck21','ck22','ck23','ck24','ck25','ck26','ck27',
 ]);
 /* ════════════════════════════════════════════════════════════ */
-
